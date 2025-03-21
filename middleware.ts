@@ -6,9 +6,9 @@ export function middleware(req: NextRequest) {
   const res = NextResponse.next();
 
   // Xóa cookie giỏ hàng khi vào trang /checkout
-  if (url.pathname === '/checkout') {
-    res.cookies.delete('cartId'); // Xóa cookie giỏ hàng
-  }
+  // if (url.pathname === '/checkout') {
+  //   res.cookies.delete('cartId'); // Xóa cookie giỏ hàng
+  // }
 
   // Redirect nếu truy cập /shop hoặc /hop-banh-trung-thu mà chưa có /null
   if (url.pathname === '/shop' && !url.pathname.endsWith('/null')) {
@@ -23,5 +23,6 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/shop', '/hop-banh-trung-thu', '/checkout'],
+  matcher: ['/shop', '/hop-banh-trung-thu'],
+  // matcher: ['/shop', '/hop-banh-trung-thu', '/checkout'],
 };
