@@ -1,6 +1,6 @@
 const BreadcrumProduct = ({ title, breadcrum }: { breadcrum?: any; title: any }) => {
   return (
-    <span className="container mt-3 flex items-center gap-1 text-sm">
+    <span className="container mt-3 line-clamp-2 flex items-center gap-1 text-sm">
       Shop
       <svg
         className="mx-1 h-3 w-3 text-second rtl:rotate-180"
@@ -19,7 +19,7 @@ const BreadcrumProduct = ({ title, breadcrum }: { breadcrum?: any; title: any })
       </svg>
       {breadcrum ? (
         <div className="flex items-center gap-2">
-          <span>{breadcrum}</span>
+          <span className="line-clamp-2">{breadcrum}</span>
           <svg
             className="mx-1 h-3 w-3 text-second rtl:rotate-180"
             aria-hidden="true"

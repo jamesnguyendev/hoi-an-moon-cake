@@ -32,7 +32,7 @@ const Page = () => {
   // Xử lý submit form 'sss
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    Cookies.set('billingInfo', JSON.stringify(formData), { expires: 7 }); 
+    Cookies.set('billingInfo', JSON.stringify(formData), { expires: 7 });
     window.history.back();
   };
 
@@ -97,20 +97,6 @@ const Page = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-sm font-medium text-gray-900">
-                    Số điện thoại Của Bạn
-                  </label>
-                  <input
-                    type="number"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="focus:border-primary-500 focus:ring-primary-500 block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900"
-                    placeholder="0589785247"
-                    required
-                  />
-                </div>
-                <div>
                   <label htmlFor="city" className="mb-2 block text-sm font-medium text-gray-900">
                     Thành Phố
                   </label>
@@ -124,7 +110,7 @@ const Page = () => {
                     required
                   />
                 </div>
-                <div>
+                <div className="sm:col-span-2">
                   <label htmlFor="address" className="mb-2 block text-sm font-medium text-gray-900">
                     Địa chỉ
                   </label>
