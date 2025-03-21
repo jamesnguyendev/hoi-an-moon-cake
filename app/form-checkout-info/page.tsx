@@ -29,7 +29,7 @@ const Page = () => {
     });
   };
 
-  // Xử lý submit form
+  // Xử lý submit form 'sss
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     Cookies.set('billingInfo', JSON.stringify(formData), { expires: 7 }); 
