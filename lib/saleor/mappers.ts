@@ -1,4 +1,4 @@
-import { Cart, Product } from 'lib/types';
+import { Cart, Product } from '../../lib/types';
 import { parseEditorJsToHtml } from './editorjs';
 import { CheckoutFragment, GetProductBySlugQuery, VariantFragment } from './generated/graphql';
 

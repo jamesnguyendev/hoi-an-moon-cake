@@ -1,5 +1,5 @@
-import { getCart } from 'lib/saleor';
 import { cookies } from 'next/headers';
+import { getCart } from '../../lib/saleor';
 import CartShop from './components/CartShop';
 import OrderSummary from './components/OrderSummary';
 

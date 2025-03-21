@@ -22,6 +22,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'phis-env.eu.saleor.cloud',
       },
+      {
+        protocol: 'https',
+        hostname: 'hoi-an-moon-cake.vercel.app',
+      },
     ],
   },
 };

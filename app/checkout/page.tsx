@@ -1,4 +1,4 @@
-import { CheckoutComplete } from 'lib/saleor';
+import { CheckoutComplete } from '../../lib/saleor';
 
 export default async function Page({ searchParams }) {
   const param = searchParams['checkout'];

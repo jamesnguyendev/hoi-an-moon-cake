@@ -1,6 +1,6 @@
 import { CreditCardIcon } from '@heroicons/react/24/outline';
-import { Cart } from 'lib/types';
 import Link from 'next/link';
+import { Cart } from '../../../lib/types';
 
 const OrderSummary = ({ cart }: { cart: Cart | null | undefined }) => {
   function formattedNumber(number: any) {

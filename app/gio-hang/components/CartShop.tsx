@@ -1,13 +1,13 @@
 'use client';
 
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
-import DeleteItemButton from 'components/cart/delete-item-button';
-import EditItemQuantityButton from 'components/cart/edit-item-quantity-button';
-import { DEFAULT_OPTION } from 'lib/constants';
-import { Cart } from 'lib/types';
-import { createUrl } from 'lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import DeleteItemButton from '../../../components/cart/delete-item-button';
+import EditItemQuantityButton from '../../../components/cart/edit-item-quantity-button';
+import { DEFAULT_OPTION } from '../../../lib/constants';
+import { Cart } from '../../../lib/types';
+import { createUrl } from '../../../lib/utils';
 
 type MerchandiseSearchParams = {
   [key: string]: string;
