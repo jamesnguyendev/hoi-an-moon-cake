@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-const HeaderCart = ({ cart }: { cart: any }) => {
+const HeaderCart = ({ cart }: { cart?: any }) => {
   function formattedNumber(number: any) {
     return new Intl.NumberFormat('vi-VN', {
       style: 'currency',
@@ -10,7 +11,7 @@ const HeaderCart = ({ cart }: { cart: any }) => {
       .replace(/\./g, ',');
   }
   return (
-    <a
+    <Link
       href={'/gio-hang'}
       className="group relative inline-flex cursor-pointer items-center rounded-lg p-3 text-center text-sm font-medium text-white max-lg:ps-[1.5rem]"
     >
@@ -64,7 +65,7 @@ const HeaderCart = ({ cart }: { cart: any }) => {
           ))}
         </div>
       )}
-    </a>
+    </Link>
   );
 };
 export default HeaderCart;

@@ -1,14 +1,10 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { sortingCombo} from '../../../lib/constants';
+import { sortingCombo } from '../../../lib/constants';
 import { useModalStore } from '../../store/Store';
 
 const DropdownMoonCakeBox = () => {
   const { isOpen, setIsOpen } = useModalStore();
-  const fileName = usePathname();
-  const url = fileName.split('/')[1];
 
   return (
     <div className="container relative">
@@ -40,13 +36,15 @@ const DropdownMoonCakeBox = () => {
           <ul className="divide-y divide-gray-100 rounded-lg border border-gray-300 bg-white  py-2 text-sm text-gray-700 shadow-sm">
             {sortingCombo.map((item, index) => (
               <li key={index}>
-                <Link
+                <a
                   className="block cursor-pointer px-4 py-2 hover:bg-gray-100"
-                  href={`/${url}/${item.slug}`}
-                  onClick={() => setIsOpen(!isOpen)}
+                  href={`?value=${item.slug}`}
+                  onClick={(e) => {
+                    setIsOpen(!isOpen);
+                  }}
                 >
                   {item.title}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

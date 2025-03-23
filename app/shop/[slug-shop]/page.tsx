@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import ProductShowcase from '../../../components/ProductShowcase';
 import { defaultSort, sorting } from '../../../lib/constants';
 import { getProducts } from '../../../lib/saleor';
 
@@ -43,9 +42,5 @@ export default async function ({ params }) {
 
   const products = await getProducts({ sortKey, reverse, productTypes: process.env.ID_MOONCAKE });
 
-  return (
-    <div>
-      <ProductShowcase products={products} />
-    </div>
-  );
+  return <div></div>;
 }

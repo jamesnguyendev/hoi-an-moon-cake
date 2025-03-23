@@ -11,7 +11,8 @@ export async function generateMetadata() {
 }
 
 const Page = async () => {
-  const cartId = cookies().get('cartId')?.value || null;
+  const cookielatest = cookies();
+  const cartId = cookielatest.get('cartId')?.value || null;
   let cart: any;
   if (cartId) {
     cart = await getCart(cartId);

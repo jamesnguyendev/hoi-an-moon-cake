@@ -1,7 +1,7 @@
 'use client';
 
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function HeaderMobile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function HeaderMobile() {
     <div className="block xl:hidden">
       <div className="relative">
         {/* Nút mở menu */}
-         <button onClick={toggleMenu} className="cursor-pointer">
+        <button onClick={toggleMenu} className="cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -28,9 +28,9 @@ export default function HeaderMobile() {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-        </button> 
+        </button>
 
-       {isOpen && (
+        {isOpen && (
           <div className="fixed inset-0 z-50 flex flex-col bg-white transition-opacity">
             <div className="flex w-full items-center justify-between pe-7 ps-3">
               <a href={'/'} onClick={closeMenu}>
@@ -42,12 +42,12 @@ export default function HeaderMobile() {
                   quality={100}
                 />
               </a>
-               <button onClick={closeMenu} className="text-3xl font-bold">
+              <button onClick={closeMenu} className="text-3xl font-bold">
                 ✖
               </button>
             </div>
 
-             <div
+            <div
               className="flex flex-col font-thin capitalize text-black *:cursor-pointer *:border-t *:border-gray-200 *:px-5 *:py-3 
               *:last:border-b "
             >
@@ -109,7 +109,7 @@ export default function HeaderMobile() {
               </a>
             </div>
           </div>
-        )} 
+        )}
       </div>
     </div>
   );

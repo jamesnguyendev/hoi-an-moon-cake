@@ -54,9 +54,6 @@ export default async function ProductPage({ params }: { params: { handle: string
   const product = await getProduct(params.handle);
   const type = product?.productType;
   if (!product) return notFound();
-  if (!product) {
-    return <p>Loading...</p>;
-  }
 
   const productJsonLd = {
     '@context': 'https://schema.org',

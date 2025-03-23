@@ -22,6 +22,7 @@ const CartShop = ({ cart }: { cart: Cart | null | undefined }) => {
       .format(Number(number))
       .replace(/\./g, ',');
   }
+
   return (
     <div className="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
       {!cart || cart.lines.length === 0 ? (

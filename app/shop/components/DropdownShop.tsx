@@ -37,7 +37,10 @@ const DropdownShop = () => {
           <ul className="py-2 text-sm text-gray-700 ">
             {sorting.map((item, index) => (
               <li key={index}>
-                <a href={`/shop/` + item.slug || '#'} className="block px-4 py-2 hover:bg-gray-100">
+                <a
+                  href={`?slug-shop=` + item.slug || '#'}
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
                   {item.title}
                 </a>
               </li>

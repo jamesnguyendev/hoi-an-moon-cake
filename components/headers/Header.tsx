@@ -1,18 +1,10 @@
-'use client';
-
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import HeaderCart from './HeaderCart';
 import HeaderMobile from './HeaderMobile';
 
 export default function Header() {
-  const [cart, setCart] = useState<any>(null);
-
-  useEffect(() => {
-    fetch('/api/cart')
-      .then((res) => res.json())
-      .then((data) => setCart(data.cart));
-  }, []);
+  // const cartId = cookies()?.get('cartId')?.value || null;
+  // const cart = await getCart(cartId as string);
 
   return (
     <div className="fixed z-40 w-full bg-primary py-3 font-semibold uppercase shadow-lg">
@@ -37,11 +29,9 @@ export default function Header() {
         </a>
         <div className="flex items-center gap-7 max-xl:order-1">
           <a href={'/hop-banh-trung-thu'} className="hidden xl:block">
-            {' '}
             Hộp Bánh
           </a>
           <a href={'/bang-gia-banh-trung-thu'} className="hidden xl:block">
-            {' '}
             Bảng Giá
           </a>
           <a href={'/lien-he'} className="hidden xl:block">
@@ -50,7 +40,8 @@ export default function Header() {
           <a href={'/chinh-sach-kinh-doanh'} className="hidden xl:block">
             Chính sách
           </a>
-          <HeaderCart cart={cart} />
+          {/* <HeaderCart cart={cart} /> */}
+          <HeaderCart />
         </div>
       </div>
     </div>

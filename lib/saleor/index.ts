@@ -54,7 +54,10 @@ export async function saleorFetch<Result, Variables>({
   invariant(endpoint, `Missing SALEOR_INSTANCE_URL!`);
 
   // const options = cache ? { cache, next: { tags } } : { next: { revalidate: 900, tags } };
-  const options = { next: { revalidate: 2, tags } }; //2s cập nhật cache
+  // const options = { next: { revalidate: 2, tags }, cache: 'no-store' }; //2s cập nhật cache
+  const options: RequestInit = {
+    cache: 'no-store',
+  };
 
   const result = await fetch(endpoint, {
     method: 'POST',

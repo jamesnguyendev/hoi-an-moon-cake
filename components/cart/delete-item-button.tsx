@@ -23,7 +23,7 @@ export default function DeleteItemButton({ item }: { item: CartItem }) {
               throw new Error(error.toString());
             }
             router.refresh();
-            window.location.reload();
+            // window.location.reload();
           });
         }}
         disabled={isPending}
