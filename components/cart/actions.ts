@@ -28,7 +28,6 @@ export const addItem = async (variantId: string | undefined): Promise<String | u
   } catch (e) {
     return 'Error adding item to cart';
   }
-  console.log(cart);
 };
 
 export const removeItem = async (lineId: string): Promise<String | undefined> => {
