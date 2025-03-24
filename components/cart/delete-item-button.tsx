@@ -1,13 +1,15 @@
-import LoadingDots from 'components/loading-dots';
+import LoadingDots from '../../components/loading-dots';
 import { useRouter } from 'next/navigation';
 
 import clsx from 'clsx';
-import type { CartItem } from 'lib/types';
+import type { CartItem } from '../../lib/types';
 import { useTransition } from 'react';
+import { useCart } from '../../context/CartContext';
 import { removeItem } from './actions';
 
 export default function DeleteItemButton({ item }: { item: CartItem }) {
   const router = useRouter();
+  const { fetchCart } = useCart();
 
   const [isPending, startTransition] = useTransition();
 
@@ -19,11 +21,12 @@ export default function DeleteItemButton({ item }: { item: CartItem }) {
           startTransition(async () => {
             const error = await removeItem(item.id);
 
+            await fetchCart();
+
             if (error) {
               throw new Error(error.toString());
             }
             router.refresh();
-            // window.location.reload();
           });
         }}
         disabled={isPending}

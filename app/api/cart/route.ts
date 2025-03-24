@@ -1,7 +1,7 @@
+import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { addItem } from '../../../components/cart/actions';
-import { cookies } from 'next/headers';
-import { getCart } from 'lib/saleor';
+import { getCart } from '../../../lib/saleor';
 
 export async function POST(req: Request) {
   try {

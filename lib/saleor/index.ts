@@ -31,7 +31,7 @@ import { saleorCheckoutToVercelCart, saleorProductToVercelProduct } from './mapp
 import { invariant } from './utils';
 
 const endpoint = process.env.SALEOR_INSTANCE_URL;
-invariant(endpoint, `Missing SALEOR_INSTANCE_URL!`);
+invariant(endpoint, `Missing SALEOR_INSTANCE_URL!!!`);
 
 type GraphQlError = {
   message: string;

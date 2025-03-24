@@ -1,3 +1,4 @@
+import { CartProvider } from '../context/CartContext';
 import { Metadata } from 'next';
 import Footer from '../components/Footer';
 import Header from '../components/headers/Header';
@@ -20,9 +21,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

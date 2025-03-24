@@ -17,6 +17,13 @@ interface ModalState {
   resetSort: () => void;
 }
 
+interface CartState {
+  cart: any;
+  fetchCart: () => Promise<void>;
+  addItem: (variantId: string) => Promise<void>;
+  removeItem: (lineId: string) => Promise<void>;
+}
+
 export const useModalStore = create<ModalState>((set) => ({
   isOpen: false,
   selectedSort: null,

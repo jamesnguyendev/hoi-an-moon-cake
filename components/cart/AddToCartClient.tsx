@@ -2,6 +2,7 @@
 
 import { PlusIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
+import { useCart } from '../../context/CartContext';
 import Cookies from 'js-cookie';
 import { ProductVariant } from 'lib/types';
 import { useEffect, useState, useTransition } from 'react';
@@ -16,6 +17,7 @@ export function AddToCartClient({
 }) {
   const [isPending, startTransition] = useTransition();
   const [searchParams, setSearchParams] = useState(new URLSearchParams());
+  const { fetchCart } = useCart();
 
   useEffect(() => {
     setSearchParams(new URLSearchParams(window.location.search));
@@ -59,6 +61,7 @@ export function AddToCartClient({
 
           if (res.ok) {
             alert('Đã thêm vào giỏ hàng');
+            await fetchCart();
           }
 
           if (!res.ok) {

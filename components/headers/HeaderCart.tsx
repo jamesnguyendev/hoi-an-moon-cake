@@ -1,7 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { useCart } from '../../context/CartContext';
 
-const HeaderCart = ({ cart }: { cart?: any }) => {
+export default function HeaderCart() {
+  const cartContext = useCart();
+  if (!cartContext) return null;
+
+  const { cart } = cartContext;
+
   function formattedNumber(number: any) {
     return new Intl.NumberFormat('vi-VN', {
       style: 'currency',
@@ -10,6 +18,7 @@ const HeaderCart = ({ cart }: { cart?: any }) => {
       .format(Number(number))
       .replace(/\./g, ',');
   }
+
   return (
     <Link
       href={'/gio-hang'}
@@ -33,7 +42,6 @@ const HeaderCart = ({ cart }: { cart?: any }) => {
         {cart?.lines?.length ?? 0}
       </div>
 
-      {/* Giỏ hàng hiển thị khi hover */}
       {cart?.lines?.length === 0 || cart?.lines?.length === undefined ? (
         <div className="pointer-events-none absolute right-0 top-12 min-w-max rounded-lg border-b-2 border-amber-400 bg-white p-4 text-black opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100 max-lg:hidden">
           <div className="absolute -top-2 right-4 h-0 w-0 border-b-8 border-l-8 border-r-8 border-b-white border-l-transparent border-r-transparent"></div>
@@ -67,5 +75,4 @@ const HeaderCart = ({ cart }: { cart?: any }) => {
       )}
     </Link>
   );
-};
-export default HeaderCart;
+}

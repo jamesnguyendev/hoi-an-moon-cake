@@ -28,4 +28,7 @@ module.exports = {
       },
     ],
   },
+  env: {
+    SALEOR_INSTANCE_URL: process.env.SALEOR_INSTANCE_URL,
+  },
 };

@@ -1,10 +1,25 @@
+// 'use client';
+
 import Image from 'next/image';
 import HeaderCart from './HeaderCart';
 import HeaderMobile from './HeaderMobile';
 
 export default function Header() {
-  // const cartId = cookies()?.get('cartId')?.value || null;
-  // const cart = await getCart(cartId as string);
+  // const [cart, setCart] = useState<any>(null);
+
+  // useEffect(() => {
+  //   async function fetchCart() {
+  //     try {
+  //       const res = await fetch('/api/cart');
+  //       const data = await res.json();
+  //       setCart(data.cart);
+  //     } catch (error) {
+  //       console.error('Lỗi khi lấy giỏ hàng:', error);
+  //     }
+  //   }
+
+  //   fetchCart();
+  // }, []);
 
   return (
     <div className="fixed z-40 w-full bg-primary py-3 font-semibold uppercase shadow-lg">
