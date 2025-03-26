@@ -5,9 +5,9 @@ const Page = () => {
   return (
     <section className="container mb-5">
       <div className="pt-32 flex flex-col justify-center items-center gap-2">
-        <h1 className="text-3xl text-primary font-semibold">
+        <div className="text-3xl text-primary font-semibold">
           Chính sách kinh doanh
-        </h1>
+        </div>
         <div className="h-1 w-16 bg-amber-400"></div>
       </div>
       <div className="flex flex-col text-2xl text-primary mt-4 font-semibold gap-2">

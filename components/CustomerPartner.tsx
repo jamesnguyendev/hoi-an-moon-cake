@@ -1,15 +1,12 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
 
 const CustomerPartner = () => {
   return (
     <section className="container my-8">
       <div>
-        <h1 className="text-primary text-center text-2xl font-semibold">
-          KHÁCH HÀNG – ĐỐI TÁC
-        </h1>
+        <div className="text-center text-4xl font-semibold text-primary">KHÁCH HÀNG – ĐỐI TÁC</div>
         <Image
-          src={"/images/logo-khach-hang-DN-pc-1536x900.png"}
+          src={'/images/logo-khach-hang-DN-pc-1536x900.png'}
           width={900}
           height={900}
           className="w-full"

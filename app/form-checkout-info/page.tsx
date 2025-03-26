@@ -45,7 +45,7 @@ const Page = () => {
         <div className="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12 xl:gap-16">
           <div className="min-w-0 flex-1 space-y-8">
             <div className="space-y-4">
-              <h2 className="text-xl font-semibold capitalize text-gray-900">Địa chỉ thanh toán</h2>
+              <div className="text-xl font-semibold capitalize text-gray-900">Địa chỉ thanh toán</div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label

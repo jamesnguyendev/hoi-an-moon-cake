@@ -48,7 +48,7 @@ export default function HeaderCart() {
           <h1>Chưa có sản phẩm</h1>
         </div>
       ) : (
-        <div className="pointer-events-none absolute right-0 top-12 min-w-max rounded-lg border-b-2 border-amber-400 bg-white p-4 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100 max-lg:hidden">
+        <div className="pointer-events-none absolute right-0 top-12 max-h-[16.5rem] min-w-max overflow-y-scroll rounded-lg border-b-2 border-amber-400 bg-white p-4 opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100 max-lg:hidden">
           <div className="absolute -top-2 right-4 h-0 w-0 border-b-8 border-l-8 border-r-8 border-b-white border-l-transparent border-r-transparent"></div>
           {cart?.lines.map((item: any, index: number) => (
             <a

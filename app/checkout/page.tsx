@@ -24,7 +24,7 @@ export default async function Page({ searchParams }) {
           </svg>
         </div>
 
-        <h1 className="mb-6 text-4xl font-extrabold text-green-600">Đặt hàng thành công!</h1>
+        <div className="mb-6 text-4xl font-extrabold text-green-600">Đặt hàng thành công!</div>
 
         <p className="mb-8 text-xl text-gray-700">Cảm ơn bạn đã đặt hàng.</p>
         <div className="mt-12">

@@ -5,8 +5,8 @@ const ReplyComment = () => {
     <div className="my-10 container">
       {" "}
       <div className="flex justify-between items-center border-b-2 border-gray-200 pb-2 mb-4">
-        <h1 className="text-xl font-bold text-blue-900">10 BÌNH LUẬN</h1>
-        <h2 className="text-xl font-bold text-blue-900">ĐỂ LẠI BÌNH LUẬN</h2>
+        <div className="text-xl font-bold text-blue-900">10 BÌNH LUẬN</div>
+        <div className="text-xl font-bold text-blue-900">ĐỂ LẠI BÌNH LUẬN</div>
       </div>
       <div className="space-y-8">
         <div className="border-b border-gray-200 pb-4">

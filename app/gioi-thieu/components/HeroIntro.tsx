@@ -5,17 +5,17 @@ const HeroIntro = () => {
   return (
     <section className="container mb-5">
       <div className="pt-28 flex flex-col justify-center items-center gap-2">
-        <h1 className="text-3xl text-primary font-semibold">GIỚI THIỆU</h1>
+        <div className="text-3xl text-primary font-semibold">GIỚI THIỆU</div>
         <div className="h-1 w-16 bg-amber-400"></div>
-        <h3 className="text-xl text-primary font-semibold">
+        <div className="text-xl text-primary font-semibold">
           Hội An Mooncake - Tinh Hoa Hội Tụ
-        </h3>
+        </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-5">
         <div className="text-sm flex flex-col gap-4">
-          <h1 className="text-xl text-primary font-semibold">
+          <div className="text-xl text-primary font-semibold">
             HỘI AN MOONCAKE
-          </h1>
+          </div>
           <span>
             <span className="text-second font-semibold">Hội An Mooncake</span> –
             Là thương hiệu

@@ -1,12 +1,11 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
 
 const VideoIntro = () => {
   return (
-    <section className="bg-primary my-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 py-9 container gap-4">
+    <section className="my-8 bg-primary">
+      <div className="container grid grid-cols-1 gap-4 py-9 lg:grid-cols-2">
         <Image
-          src={"/images/banh-HA-03.png"}
+          src={'/images/banh-HA-03.png'}
           width={400}
           height={400}
           alt="hanh ha 03"
@@ -15,7 +14,7 @@ const VideoIntro = () => {
         <div className="">
           <Image
             alt="video giới thiệu"
-            src={"/images/banner-video-aaathieu-md.png"}
+            src={'/images/banner-video-aaathieu-md.png'}
             width={300}
             height={100}
             className="w-full"
@@ -32,11 +31,11 @@ const VideoIntro = () => {
           />
           <Image
             alt="video giới thiệu"
-            src={"/images/banner-video-gioi-qq-md.png"}
+            src={'/images/banner-video-gioi-qq-md.png'}
             width={300}
             height={100}
             className="w-full"
-          />{" "}
+          />
         </div>
       </div>
     </section>

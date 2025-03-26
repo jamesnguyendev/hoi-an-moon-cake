@@ -1,56 +1,50 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
     <section className="bg-primary text-white">
       <div className="container py-10">
-        <div className="flex max-lg:flex-wrap items-center justify-center gap-10">
+        <div className="flex items-center justify-center gap-10 max-lg:flex-wrap">
           <div className="w-[60rem]">
-            <h2>HỘI AN MOONCAKE – TINH HOA HỘI TỤ</h2>
+            <div>HỘI AN MOONCAKE – TINH HOA HỘI TỤ</div>
             <p className="mt-3 text-sm text-white/80">
-              Hội An Mooncake – Bánh trung thu Hội An là thương hiệu bánh trung
-              thu được ra đời với cảm hứng từ một địa danh nổi tiếng của Việt
-              Nam, nơi mà những người dân bản địa hòa cùng nền văn hóa du nhập
-              tạo nên một bản sắc độc đáo, phát triển phồn thịnh nhưng vẫn mang
-              đậm vẻ đẹp truyền thống và bình dị.
+              Hội An Mooncake – Bánh trung thu Hội An là thương hiệu bánh trung thu được ra đời với
+              cảm hứng từ một địa danh nổi tiếng của Việt Nam, nơi mà những người dân bản địa hòa
+              cùng nền văn hóa du nhập tạo nên một bản sắc độc đáo, phát triển phồn thịnh nhưng vẫn
+              mang đậm vẻ đẹp truyền thống và bình dị.
             </p>
           </div>
           <Image
             alt="Logo mooncake"
-            src={"/images/logo.png"}
+            src={'/images/logo.png'}
             width={150}
             height={90}
             className="max-lg:w-1/2"
           />
           <div className="w-[60rem]">
-            <h2>XEM CATALOGUE BÁNH TRUNG THU</h2>
+            <div>XEM CATALOGUE BÁNH TRUNG THU</div>
             <p className="mb-6">
-              Bảng giá mới nhất luôn được cập nhật. Quý khách hàng và đại lý vui
-              lòng tham khảo nội dung sau, để nhận được giá tốt và chính xác
-              nhất.
+              Bảng giá mới nhất luôn được cập nhật. Quý khách hàng và đại lý vui lòng tham khảo nội
+              dung sau, để nhận được giá tốt và chính xác nhất.
             </p>
-            <Link
-              href={"/catalogue"}
-              className="py-3 px-5 rounded-lg bg-emerald-700"
-            >
+            <Link href={'/catalogue'} className="rounded-lg bg-emerald-700 px-5 py-3">
               Xem Catalogue
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 mt-5">
+        <div className="mt-5 grid grid-cols-1 lg:grid-cols-4">
           <div className="flex flex-col gap-4">
             <div>Update Hằng Ngày</div>
             <div className="flex flex-col text-second">
-              <Link href={"/"}>Bảng giá bánh trung thu</Link>
+              <Link href={'/'}>Bảng giá bánh trung thu</Link>
               <Link href="/">Hộp bánh trung thu</Link>
               <Link href="/">Sự Kiện trung thu</Link>
               <Link href="/">Thông tin chia sẻ</Link>
             </div>
             <div className="italic">Theo dõi Hội An Mooncake </div>
             <div className="flex gap-2">
-              <Link href={"https://www.facebook.com/banhtrungthuhoian/"}>
+              <Link href={'https://www.facebook.com/banhtrungthuhoian/'}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.0"
@@ -65,7 +59,7 @@ const Footer = () => {
                   <path d="M40,0H10C4.486,0,0,4.486,0,10v30c0,5.514,4.486,10,10,10h30c5.514,0,10-4.486,10-10V10C50,4.486,45.514,0,40,0z M39,17h-3 c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z"></path>
                 </svg>
               </Link>
-              <Link href={"https://x.com/HoiAnMooncake"}>
+              <Link href={'https://x.com/HoiAnMooncake'}>
                 <svg
                   width="40"
                   height="40"
@@ -77,11 +71,7 @@ const Footer = () => {
                   <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" />
                 </svg>
               </Link>
-              <Link
-                href={
-                  "https://www.youtube.com/channel/UCw8LKIF_JBWBPBq0S8WgkVw"
-                }
-              >
+              <Link href={'https://www.youtube.com/channel/UCw8LKIF_JBWBPBq0S8WgkVw'}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -99,11 +89,11 @@ const Footer = () => {
             <h3>Chính Sách Kinh Doanh</h3>
 
             <div className="flex flex-col text-second">
-              <Link href={"/"}>Chính sách hoàn trả</Link>
-              <Link href={"/"}>Chính sách khách hàng</Link>
-              <Link href={"/"}>Chính sách kinh doanh</Link>
-              <Link href={"/"}>Chính sách thanh toán</Link>
-              <Link href={"/"}>Chính sách vận chuyển</Link>
+              <Link href={'/'}>Chính sách hoàn trả</Link>
+              <Link href={'/'}>Chính sách khách hàng</Link>
+              <Link href={'/'}>Chính sách kinh doanh</Link>
+              <Link href={'/'}>Chính sách thanh toán</Link>
+              <Link href={'/'}>Chính sách vận chuyển</Link>
             </div>
 
             <div>
@@ -120,7 +110,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-4 max-lg:mt-6">
             <div>Sản Phẩm Thuộc:</div>
-            <div className="text-sm flex gap-1 flex-col">
+            <div className="flex flex-col gap-1 text-sm">
               <div className="">Công Ty TNHH TMSX TÂN PHÚ NHUẬN</div>
               <div>MST: 0313117616</div>
               <div className="flex gap-2">
@@ -142,7 +132,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-1 flex-col">
+          <div className="flex flex-col gap-1">
             <div>Liên Hệ Đơn Vị Phân Phối:</div>
             <div>CÔNG TY TNHH TMDV SAGOMART</div>
             <div>MST: 0317314189</div>

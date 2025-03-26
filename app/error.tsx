@@ -7,9 +7,9 @@ export default function Error({ reset }: { reset: () => void }) {
     <section className="pt-26  bg-white">
       <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
         <div className="mx-auto max-w-screen-sm text-center">
-          <h1 className="text-primary-600 mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl">
+          <div className="text-primary-600 mb-4 text-7xl font-extrabold tracking-tight lg:text-9xl">
             500
-          </h1>
+          </div>
           <p className="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl ">
             Có gì đó đang sai. Vui lòng thử lại.
           </p>

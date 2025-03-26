@@ -13,9 +13,9 @@ const Page = () => {
     <section className="mb-5">
       <div className="container">
         <div className="pt-32 flex flex-col justify-center items-center gap-2">
-          <h1 className="text-3xl text-primary uppercase font-semibold">
+          <div className="text-3xl text-primary uppercase font-semibold">
             Liên Hệ
-          </h1>
+          </div>
           <div className="h-1 w-16 bg-amber-400"></div>
           <h3 className="text-xl text-primary font-semibold">
             Hội An Mooncake

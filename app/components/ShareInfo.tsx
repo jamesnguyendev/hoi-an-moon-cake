@@ -4,9 +4,9 @@ import React from "react";
 const ShareInfo = () => {
   return (
     <section className="container my-6">
-      <h1 className="text-primary text-center text-2xl font-semibold mb-7">
+      <div className="text-primary text-center text-2xl font-semibold mb-7">
         THÔNG TIN CHIA SẺ
-      </h1>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mb-16">
         <div className="text-center flex flex-col gap-3">
           <div className="ring-2 ring-[#00246D] hover:ring-amber-400 hover:duration-300">
@@ -18,9 +18,9 @@ const ShareInfo = () => {
               className="w-full p-1"
             />
           </div>
-          <h2 className="text-primary text-xl font-semibold">
+          <div className="text-primary text-xl font-semibold">
             Hội An Mooncake khai trương gian hàng bánh trung thu tại Takashimaya
-          </h2>
+          </div>
           <span className="font-thin text-md">
             Ngày 1/8 vừa qua, Takashimaya đã trở nên rộn ràng hơn bao giờ hết
             với sự xuất hiện của cửa [...]
@@ -92,10 +92,10 @@ const ShareInfo = () => {
               className="w-full p-1"
             />
           </div>
-          <h2 className="text-primary text-xl font-semibold">
+          <div className="text-primary text-xl font-semibold">
             Chương Trình Thu 2019 “Ai cũng có bánh ngon – Ai cũng có quà đẹp”
             (1-10/09/2019)
-          </h2>
+          </div>
           <span className="font-thin text-md">
             Chương Trình Thu 2019 “Ai cũng có bánh ngon – Ai cũng có quà đẹp”
             của Hội An Mooncake (1-10/09/2019) [...]
@@ -167,9 +167,9 @@ const ShareInfo = () => {
               className="w-full p-1"
             />
           </div>
-          <h2 className="text-primary text-xl font-semibold">
+          <div className="text-primary text-xl font-semibold">
             Đêm hội âm nhạc “Ánh Trăng Nhiệm Màu”
-          </h2>
+          </div>
           <span className="font-thin text-md">
             Hòa trong không khí trung thu rộn rã ba miền, dự kiến tối ngày
             30/09/2020, Hội An Mooncake sẽ tổ [...]

@@ -87,7 +87,7 @@ const CartShop = ({ cart }: { cart: Cart | null | undefined }) => {
                   <div className="w-full min-w-0 flex-1  space-y-4 md:order-2 md:max-w-md">
                     <Link
                       href={merchandiseUrl}
-                      className="  text-xl font-semibold text-primary hover:underline  "
+                      className="  text-xl font-semibold text-primary hover:underline"
                     >
                       {item.merchandise.product.title}
                     </Link>

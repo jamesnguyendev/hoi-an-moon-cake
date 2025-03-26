@@ -12,8 +12,8 @@ const ProductCombo = async ({
       <div className="text-center text-3xl font-semibold text-primary">
         {title ? (
           <>
-            <h3>COMBO BÁNH TRUNG THU</h3>
-            <h3>HỘI AN MOONCAKE</h3>
+            <div>COMBO BÁNH TRUNG THU</div>
+            <div>HỘI AN MOONCAKE</div>
           </>
         ) : (
           <></>

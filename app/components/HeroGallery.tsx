@@ -49,7 +49,7 @@ const HeroGallery = () => {
   return (
     <section className="container mt-10 mb-5">
       <div className="text-primary text-center text-3xl font-semibold">
-        <h3>GALLERY</h3>
+        <div>GALLERY</div>
         <div className="overflow-hidden relative w-full mt-5">
           <div
             className="flex transition-transform ease-out duration-500"
