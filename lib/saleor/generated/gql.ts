@@ -32,7 +32,8 @@ const documents = {
     "query GetCount($productTypes: [ID!]) {\n  products(first: 100, filter: {productTypes: $productTypes}) {\n    totalCount\n  }\n}": types.GetCountDocument,
     "query GetFeaturedProducts($first: Int!) {\n  products(first: $first, channel: \"default-channel\") {\n    edges {\n      node {\n        ...FeaturedProduct\n      }\n    }\n  }\n}": types.GetFeaturedProductsDocument,
     "fragment MenuItem on MenuItem {\n  id\n  name\n  url\n  collection {\n    slug\n    products(first: 0) {\n      totalCount\n    }\n  }\n  category {\n    slug\n    products(channel: \"default-channel\", first: 0) {\n      totalCount\n    }\n  }\n  page {\n    slug\n  }\n}\n\nquery GetMenuBySlug($slug: String!) {\n  menu(slug: $slug, channel: \"default-channel\") {\n    id\n    slug\n    name\n    items {\n      ...MenuItem\n      children {\n        ...MenuItem\n        children {\n          ...MenuItem\n          children {\n            ...MenuItem\n          }\n        }\n      }\n    }\n  }\n}": types.MenuItemFragmentDoc,
-    "query GetPageBySlug($slug: String!) {\n  page(slug: $slug) {\n    id\n    title\n    slug\n    content\n    seoTitle\n    seoDescription\n    created\n  }\n}": types.GetPageBySlugDocument,
+    "query GetPageByPageType($pageTypes: [ID!]) {\n  pages(first: 10, filter: {pageTypes: $pageTypes}) {\n    edges {\n      node {\n        title\n        content\n        created\n        slug\n      }\n    }\n  }\n}": types.GetPageByPageTypeDocument,
+    "query GetPageBySlug($slug: String!) {\n  page(slug: $slug) {\n    id\n    title\n    slug\n    content\n    seoTitle\n    seoDescription\n    created\n    pageType {\n      name\n      id\n    }\n  }\n}": types.GetPageBySlugDocument,
     "query GetPages {\n  pages(first: 10) {\n    edges {\n      node {\n        id\n        title\n        slug\n        content\n        seoTitle\n        seoDescription\n        created\n      }\n    }\n  }\n}": types.GetPagesDocument,
     "query GetProductBySlug($slug: String!) {\n  product(channel: \"default-channel\", slug: $slug) {\n    ...ProductDetails\n  }\n}": types.GetProductBySlugDocument,
     "query SearchProducts($search: String!, $sortBy: ProductOrderField!, $sortDirection: OrderDirection!, $productTypes: [ID!]) {\n  products(\n    first: 100\n    channel: \"default-channel\"\n    sortBy: {field: $sortBy, direction: $sortDirection}\n    filter: {search: $search, productTypes: $productTypes}\n  ) {\n    edges {\n      node {\n        id\n        slug\n        name\n        isAvailableForPurchase\n        description\n        seoTitle\n        seoDescription\n        pricing {\n          priceRange {\n            start {\n              gross {\n                currency\n                amount\n              }\n            }\n            stop {\n              gross {\n                currency\n                amount\n              }\n            }\n          }\n        }\n        media {\n          url(size: 2160)\n          type\n          alt\n        }\n        collections {\n          name\n        }\n        updatedAt\n        variants {\n          ...Variant\n        }\n        productType {\n          id\n        }\n      }\n    }\n  }\n}": types.SearchProductsDocument,
@@ -115,7 +116,11 @@ export function graphql(source: "fragment MenuItem on MenuItem {\n  id\n  name\n
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query GetPageBySlug($slug: String!) {\n  page(slug: $slug) {\n    id\n    title\n    slug\n    content\n    seoTitle\n    seoDescription\n    created\n  }\n}"): typeof import('./graphql').GetPageBySlugDocument;
+export function graphql(source: "query GetPageByPageType($pageTypes: [ID!]) {\n  pages(first: 10, filter: {pageTypes: $pageTypes}) {\n    edges {\n      node {\n        title\n        content\n        created\n        slug\n      }\n    }\n  }\n}"): typeof import('./graphql').GetPageByPageTypeDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query GetPageBySlug($slug: String!) {\n  page(slug: $slug) {\n    id\n    title\n    slug\n    content\n    seoTitle\n    seoDescription\n    created\n    pageType {\n      name\n      id\n    }\n  }\n}"): typeof import('./graphql').GetPageBySlugDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

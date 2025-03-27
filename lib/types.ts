@@ -55,6 +55,8 @@ export type Page = {
   title: string;
   handle: string;
   body: string;
+  nameType?: string;
+  Typeid?: string;
   bodySummary: string;
   seo?: SEO;
   createdAt: string;

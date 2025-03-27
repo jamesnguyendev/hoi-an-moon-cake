@@ -17,6 +17,7 @@ import {
   GetCollectionsDocument,
   GetCountDocument,
   GetMenuBySlugDocument,
+  GetPageByPageTypeDocument,
   GetPageBySlugDocument,
   GetPagesDocument,
   GetProductBySlugDocument,
@@ -125,6 +126,8 @@ export async function getPage(handle: string): Promise<Page> {
     title: saleorPage.page.title,
     handle: saleorPage.page.slug,
     body: saleorPage.page.content || '',
+    nameType: saleorPage.page.pageType.name,
+    Typeid: saleorPage.page.pageType.id,
     bodySummary: saleorPage.page.seoDescription || '',
     seo: {
       title: saleorPage.page.seoTitle || saleorPage.page.title,
@@ -133,6 +136,29 @@ export async function getPage(handle: string): Promise<Page> {
     createdAt: saleorPage.page.created,
     updatedAt: saleorPage.page.created,
   };
+}
+export async function getPageByPageType(id: string) {
+  const saleorPages = await saleorFetch({
+    query: GetPageByPageTypeDocument,
+    variables: {
+      pageTypes: id,
+    },
+  });
+
+  if (!saleorPages.pages) {
+    throw new Error(`Page not found: ${id}`);
+  }
+
+  return (
+    saleorPages.pages?.edges.map((page) => {
+      return {
+        title: page.node.title || '',
+        handle: page.node.slug || '',
+        body: page.node.content || '',
+        createdAt: page.node.created || '',
+      };
+    }) || []
+  );
 }
 
 export async function getProduct(handle: string): Promise<Product | undefined> {
@@ -424,7 +450,7 @@ export async function getPages(): Promise<Page[]> {
         title: page.node.title,
         handle: page.node.slug,
         body: page.node.content || '',
-        bodySummary: page.node.seoDescription || '',
+        bodySummary: page.node.content || '',
         seo: {
           title: page.node.seoTitle || page.node.title,
           description: page.node.seoDescription || '',

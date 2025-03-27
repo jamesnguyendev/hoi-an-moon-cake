@@ -7,5 +7,9 @@ query GetPageBySlug($slug: String!) {
     seoTitle
     seoDescription
     created
+    pageType {
+      name
+      id
+    }
   }
 }

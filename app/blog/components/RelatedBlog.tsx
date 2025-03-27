@@ -1,28 +1,27 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import { getPageByPageType } from '../../../lib/saleor';
+import Description from './Description';
 
-const RelatedBlog = () => {
+const RelatedBlog = async ({ type }: { type: any }) => {
+  const pageTypes = await getPageByPageType(type);
+  function formatDate(date: any) {
+    let d = new Date(date);
+    return d.toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
   return (
-    <div>
-      <div className="">
-        <span className="text-primary">Bài viết cùng chủ đề</span>
-        <div className="">
-          <Link href={'/'}>
-            <Image
-              src={'/images/banh-trung-thu-buu-yen-5-600x601.jpg'}
-              alt="Related blog"
-              width={300}
-              height={300}
-              className="w-full"
-            />
-          </Link>
-          <Link href={'/'} className="line-clamp-2 text-second hover:text-primary hover:underline">
-            Cuộc Thi Ảnh “Đệ Nhất Bánh Trung Thu” Lần Thứ I
-          </Link>
-          <span className="text-sm text-gray-500">06/07/2020</span>
-          <p className="text-black line-clamp-2">Hội An Mooncake chính thức khởi động Cuộc thi ảnh</p>
+    <div className="">
+      <span className="text-primary">Bài viết cùng chủ đề</span>
+      {pageTypes.map((item, index) => (
+        <div className="pt-4" key={index}>
+          <a
+            href={`/blog/${item.handle}`}
+            className="line-clamp-2 text-second hover:text-primary hover:underline"
+          >
+            {item.title}
+          </a>
+          <span className="text-sm text-gray-500">{formatDate(item.createdAt)} | By Admin</span>
+          <Description type={item.body} />
         </div>
-      </div>
+      ))}
     </div>
   );
 };

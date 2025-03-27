@@ -32599,12 +32599,19 @@ export type GetMenuBySlugQueryVariables = Exact<{
 
 export type GetMenuBySlugQuery = { menu?: { id: string, slug: string, name: string, items?: Array<{ id: string, name: string, url?: string | null, children?: Array<{ id: string, name: string, url?: string | null, children?: Array<{ id: string, name: string, url?: string | null, children?: Array<{ id: string, name: string, url?: string | null, collection?: { slug: string, products?: { totalCount?: number | null } | null } | null, category?: { slug: string, products?: { totalCount?: number | null } | null } | null, page?: { slug: string } | null }> | null, collection?: { slug: string, products?: { totalCount?: number | null } | null } | null, category?: { slug: string, products?: { totalCount?: number | null } | null } | null, page?: { slug: string } | null }> | null, collection?: { slug: string, products?: { totalCount?: number | null } | null } | null, category?: { slug: string, products?: { totalCount?: number | null } | null } | null, page?: { slug: string } | null }> | null, collection?: { slug: string, products?: { totalCount?: number | null } | null } | null, category?: { slug: string, products?: { totalCount?: number | null } | null } | null, page?: { slug: string } | null }> | null } | null };
 
+export type GetPageByPageTypeQueryVariables = Exact<{
+  pageTypes?: InputMaybe<Array<Scalars['ID']> | Scalars['ID']>;
+}>;
+
+
+export type GetPageByPageTypeQuery = { pages?: { edges: Array<{ node: { title: string, content?: string | null, created: string, slug: string } }> } | null };
+
 export type GetPageBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type GetPageBySlugQuery = { page?: { id: string, title: string, slug: string, content?: string | null, seoTitle?: string | null, seoDescription?: string | null, created: string } | null };
+export type GetPageBySlugQuery = { page?: { id: string, title: string, slug: string, content?: string | null, seoTitle?: string | null, seoDescription?: string | null, created: string, pageType: { name: string, id: string } } | null };
 
 export type GetPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -33826,6 +33833,20 @@ export const GetMenuBySlugDocument = new TypedDocumentString(`
     slug
   }
 }`) as unknown as TypedDocumentString<GetMenuBySlugQuery, GetMenuBySlugQueryVariables>;
+export const GetPageByPageTypeDocument = new TypedDocumentString(`
+    query GetPageByPageType($pageTypes: [ID!]) {
+  pages(first: 10, filter: {pageTypes: $pageTypes}) {
+    edges {
+      node {
+        title
+        content
+        created
+        slug
+      }
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<GetPageByPageTypeQuery, GetPageByPageTypeQueryVariables>;
 export const GetPageBySlugDocument = new TypedDocumentString(`
     query GetPageBySlug($slug: String!) {
   page(slug: $slug) {
@@ -33836,6 +33857,10 @@ export const GetPageBySlugDocument = new TypedDocumentString(`
     seoTitle
     seoDescription
     created
+    pageType {
+      name
+      id
+    }
   }
 }
     `) as unknown as TypedDocumentString<GetPageBySlugQuery, GetPageBySlugQueryVariables>;
