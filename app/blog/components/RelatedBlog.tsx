@@ -12,7 +12,7 @@ const RelatedBlog = async ({ type }: { type: any }) => {
     <div className="">
       <span className="text-primary">Bài viết cùng chủ đề</span>
       {pageTypes
-        .slice(0, 10)
+        .toReversed(0, 10)
         .reverse()
         .map((item: any, index: number) => (
           <div className="pt-4" key={index}>

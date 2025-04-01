@@ -14,7 +14,6 @@ import CEOPost from './CEOPost';
 export default function MainBlog({ page }: { page?: any }) {
   const data = page[0];
   const [htmlContent, setHtmlContent] = useState('');
-  console.log(data);
 
   useEffect(() => {
     const cleanHTML = DOMPurify.sanitize(data?.body);
