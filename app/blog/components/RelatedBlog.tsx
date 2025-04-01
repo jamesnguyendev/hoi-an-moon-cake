@@ -3,7 +3,6 @@ import { getArticleByTheSameTopic } from '../../../lib/cms';
 
 const RelatedBlog = async ({ type }: { type: any }) => {
   const pageTypes = await getArticleByTheSameTopic(type);
-  console.log(pageTypes);
 
   function formatDate(date: any) {
     let d = new Date(date);

@@ -46,9 +46,9 @@ export default function MainBlog({ page }: { page?: any }) {
           <span>bình luận</span>
         </div>
       </div>
-      <div className="">
+      <div className="prose min-w-full">
         {htmlContent ? (
-          <div className="prose py-5" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
+          <div className=" py-5" dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
         ) : (
           <p className="py-5">Đang tải...</p>
         )}

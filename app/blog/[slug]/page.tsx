@@ -1,4 +1,4 @@
-import { getArticleBySlug } from 'lib/cms';
+import { getArticleBySlug } from '../../../lib/cms';
 import MainBlog from '../components/MainBlog';
 import RelatedBlog from '../components/RelatedBlog';
 
