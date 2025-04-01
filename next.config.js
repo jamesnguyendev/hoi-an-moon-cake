@@ -26,6 +26,10 @@ module.exports = {
         protocol: 'https',
         hostname: 'hoi-an-moon-cake.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'ideal-comfort-d7d245d943.media.strapiapp.com',
+      },
     ],
   },
   env: {

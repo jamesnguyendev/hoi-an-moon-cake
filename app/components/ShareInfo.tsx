@@ -1,8 +1,8 @@
-import { getPages } from '../../lib/saleor';
-import { parseEditorJsToHtml } from '../../lib/saleor/editorjs';
+import { getArticles } from 'lib/cms';
+import Image from 'next/image';
 
 const ShareInfo = async () => {
-  const pages = await getPages();
+  const pages = await getArticles();
 
   function formatDate(date: any) {
     let d = new Date(date);
@@ -12,18 +12,22 @@ const ShareInfo = async () => {
     <section className="container my-6">
       <div className="mb-10 text-center text-2xl font-semibold text-primary">THÔNG TIN CHIA SẺ</div>
       <div className="mb-16 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-        {pages.slice(0, 3).map((item, index) => (
+        {pages.slice(0, 3).map((item: any, index: number) => (
           <div className="flex flex-col gap-3 text-center" key={index}>
+            <Image
+              alt={item.title && 'No image'}
+              width={500}
+              height={500}
+              src={item.image}
+              className="h-full w-full"
+            />
             <a
               href={`/blog/${item.handle}`}
-              className="line-clamp-2 text-xl font-semibold text-primary"
+              className="line-clamp-2 py-3 text-xl font-semibold text-primary"
             >
               {item.title}
             </a>
-            <span
-              className="text-md line-clamp-2 font-thin"
-              dangerouslySetInnerHTML={{ __html: parseEditorJsToHtml(item.body) }}
-            ></span>
+            <span className="text-md line-clamp-2 py-3 font-thin">{item.description}</span>
             <div className="flex flex-col items-center justify-center text-center">
               <div className="w-13 h-1 bg-amber-400"></div>
               <div className="mt-3 flex items-center justify-center gap-3 text-sm">
@@ -42,7 +46,7 @@ const ShareInfo = async () => {
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
-                  <span> Admin</span>
+                  <span> {item.authorName}</span>
                 </div>
                 <div className="flex gap-1 border-x px-3">
                   <svg

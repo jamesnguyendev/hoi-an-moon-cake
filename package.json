@@ -29,6 +29,7 @@
     "@vercel/og": "^0.5.4",
     "autoprefixer": "^10.4.14",
     "clsx": "^2.0.0",
+    "dompurify": "^3.2.4",
     "framer-motion": "^8.4.0",
     "he": "^1.2.0",
     "is-empty-iterable": "^3.0.0",
