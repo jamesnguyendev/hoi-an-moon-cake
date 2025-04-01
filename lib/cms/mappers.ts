@@ -5,7 +5,7 @@ export function CmsToVercelProduct(item: any) {
     handle: item.slug || '#',
     description: item.description || '',
     image: item.cover?.url || '/images/no-image.jpg',
-    authorName: item.author?.name || 'Chưa có tên',
+    authorName: item.author?.name || 'Admin',
     category: item.category?.name || 'Chưa có danh mục',
     createdAt: item.createdAt,
     body: item.richText || '',

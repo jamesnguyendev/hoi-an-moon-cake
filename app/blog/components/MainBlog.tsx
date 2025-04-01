@@ -14,6 +14,7 @@ import CEOPost from './CEOPost';
 export default function MainBlog({ page }: { page?: any }) {
   const data = page[0];
   const [htmlContent, setHtmlContent] = useState('');
+  console.log(data);
 
   useEffect(() => {
     const cleanHTML = DOMPurify.sanitize(data?.body);
@@ -35,7 +36,7 @@ export default function MainBlog({ page }: { page?: any }) {
         </div>
         <div className="flex gap-2">
           <UserCircleIcon className="size-5 text-second" />
-          <span>{formatDate(data?.authorName || 'Admin')}</span>
+          <span>{data?.authorName}</span>
         </div>
         <div className="flex gap-2">
           <FolderIcon className="size-5 text-second" />
