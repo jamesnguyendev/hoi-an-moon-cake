@@ -9,8 +9,8 @@ const RelatedBlog = async ({ type }: { type: any }) => {
     return d.toLocaleDateString('vi-VN', { year: 'numeric', month: 'long', day: 'numeric' });
   }
   return (
-    <div className="">
-      <span className="text-primary">Bài viết cùng chủ đề</span>
+    <div className="prose pt-10 md:pt-0">
+      <span className=" text-primary">Bài viết cùng chủ đề</span>
       {pageTypes
         .toReversed(0, 10)
         .reverse()
