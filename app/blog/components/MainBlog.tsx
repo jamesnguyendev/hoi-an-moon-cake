@@ -28,7 +28,7 @@ export default function MainBlog({ page }: { page?: any }) {
   return (
     <div>
       <h1 className="text-3xl font-semibold text-primary">{data?.title}</h1>
-      <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-3 border-y py-4 text-sm capitalize">
+      <div className="mt-5 flex flex-wrap justify-center gap-3 border-y py-4 text-sm capitalize md:justify-start">
         <div className="flex gap-2">
           <CalendarIcon className="size-5 text-second" />
           <span>{formatDate(data?.createdAt || new Date())}</span>

@@ -14,6 +14,7 @@ export async function fetchGraphQLCms(query, variables = {}) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ query, variables }),
+    cache: 'no-store',
   });
 
   const data = await response.json();

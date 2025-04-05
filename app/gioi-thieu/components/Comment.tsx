@@ -1,7 +1,7 @@
 const Comment = () => {
   return (
     <div className="my-8 flex flex-col items-center">
-      <div className="flex md:w-2/3 flex-col gap-2 rounded-2xl bg-[#fafafa] text-center shadow-2xl *:mx-6">
+      <div className="flex flex-col gap-2 rounded-2xl mx-6 bg-[#fafafa] text-center shadow-2xl *:mx-6 md:w-2/3 lg:w-1/2 ">
         <h6 className="line-clamp-1 text-3xl font-semibold text-primary">Để lại bình luận</h6>
         <p className="line-clamp-1 text-sm">Địa chỉ email của bạn giữ bí mật.</p>
         <input

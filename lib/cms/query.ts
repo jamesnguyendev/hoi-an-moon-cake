@@ -71,3 +71,25 @@ query getArticleSameTopic($name: String!) {
     }
   }
 }`;
+
+export const getPoliciesQuery = `
+query getPolicies {
+  policies_connection {
+    nodes {
+      title
+      richText
+    }
+  }
+}
+`;
+export const getCommentsQuery = `
+query Comments {
+  comments_connection {
+    nodes {
+      title
+      createdAt
+      richText
+    }
+  }
+}
+`;

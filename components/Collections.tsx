@@ -8,16 +8,18 @@ const Collections = async ({ collections }) => {
         <p className="font-mono">collection 2024</p>
       </div>
       <div className="container grid grid-cols-1 gap-1 lg:grid-cols-3">
-        {collections.map((item, index) => (
-          <Image
-            key={index}
-            src={item.backgroundImage ?? '/images/noimg.png'}
-            alt="ha-1"
-            width={500}
-            unoptimized={true}
-            height={100}
-            className="w-full border border-primary bg-primary"
-          />
+        {collections.map((item: any, index: number) => (
+          <a href="/catalogue">
+            <Image
+              key={index}
+              src={item.backgroundImage ?? '/images/noimg.png'}
+              alt="ha-1"
+              width={500}
+              unoptimized={true}
+              height={100}
+              className="w-full border border-primary bg-primary"
+            />
+          </a>
         ))}
       </div>
     </section>
